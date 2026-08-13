@@ -13,7 +13,6 @@
             --border-color: #334155;
             --accent: #38bdf8;
             --success: #22c55e;
-            --warning: #eab308;
             --danger: #ef4444;
         }
         body {
@@ -79,9 +78,9 @@
             font-size: 2rem;
             font-weight: 700;
         }
-        .stat-card.accessible .num { color: var(--success); }
-        .stat-card.disabled .num { color: var(--text-muted); }
-        .stat-card.errors .num { color: var(--danger); }
+        .stat-card.accessible .num { color: var(--danger); }
+        .stat-card.disabled .num { color: var(--success); }
+        .stat-card.errors .num { color: var(--text-muted); }
         
         table {
             width: 100%;
@@ -130,7 +129,7 @@
     <div class="container">
         <div class="header">
             <h1>Salesforce GraphQL Audit Report</h1>
-            <div style="color: var(--text-muted); font-size: 0.875rem;">Generated on 2026-08-13 10:58:03</div>
+            <div style="color: var(--text-muted); font-size: 0.875rem;">Generated on 2026-08-13 11:25:13</div>
         </div>
 
         <div class="meta-grid">
@@ -150,15 +149,15 @@
                 <div class="num">31</div>
             </div>
             <div class="stat-card accessible">
-                <div class="label">Accessible</div>
+                <div class="label">Accessible (Risk)</div>
                 <div class="num">9</div>
             </div>
             <div class="stat-card disabled">
-                <div class="label">Disabled</div>
+                <div class="label">Restricted / Disabled</div>
                 <div class="num">22</div>
             </div>
             <div class="stat-card errors">
-                <div class="label">Errors / Restricted</div>
+                <div class="label">Errors</div>
                 <div class="num">0</div>
             </div>
         </div>
@@ -176,187 +175,187 @@
         <tr>
             <td class="obj-name">Account</td>
             <td class="count-val">11</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Contact</td>
             <td class="count-val">17</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Lead</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Opportunity</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Case</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">User</td>
             <td class="count-val">1</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Contract</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Order</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">OrderItem</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Product2</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Pricebook2</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">PricebookEntry</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Campaign</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">CampaignMember</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Task</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Event</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Asset</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Solution</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Idea</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Quote</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">QuoteLineItem</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">ContentDocument</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">ContentVersion</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Attachment</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Note</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Group</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">GroupMember</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">UserRole</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Profile</td>
             <td class="count-val">53</td>
-            <td><span class="badge badge-success">Accessible</span></td>
+            <td><span class="badge badge-danger">Accessible</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">PermissionSet</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
         <tr>
             <td class="obj-name">Document</td>
             <td class="count-val">0</td>
-            <td><span class="badge badge-secondary">Disabled / Undefined in Schema</span></td>
+            <td><span class="badge badge-success">Disabled / Undefined in Schema</span></td>
         </tr>
         
             </tbody>

@@ -108,8 +108,8 @@ def generate_html_report(site_url, endpoint, results, output_filename):
     )
     disabled_count = sum(
         1
-    for r in results
-    if r["result"]["status"] == "Disabled / Undefined in Schema"
+        for r in results
+        if "Disabled" in r["result"]["status"] or "Restricted" in r["result"]["status"]
     )
     errors_count = total_objects - (accessible_count + disabled_count)
 
@@ -123,13 +123,13 @@ def generate_html_report(site_url, endpoint, results, output_filename):
             else "N/A"
         )
 
-        # Map status to CSS classes
+        # Security Color Mapping: Accessible = Red (Risk/Finding), Restricted/Disabled = Green (Safe)
         if status == "Accessible":
-            badge_class = "badge-success"
-        elif "Disabled" in status:
-            badge_class = "badge-secondary"
-        else:
             badge_class = "badge-danger"
+        elif "Disabled" in status or "Restricted" in status:
+            badge_class = "badge-success"
+        else:
+            badge_class = "badge-secondary"
 
         table_rows += f"""
         <tr>
@@ -154,7 +154,6 @@ def generate_html_report(site_url, endpoint, results, output_filename):
             --border-color: #334155;
             --accent: #38bdf8;
             --success: #22c55e;
-            --warning: #eab308;
             --danger: #ef4444;
         }}
         body {{
@@ -220,9 +219,9 @@ def generate_html_report(site_url, endpoint, results, output_filename):
             font-size: 2rem;
             font-weight: 700;
         }}
-        .stat-card.accessible .num {{ color: var(--success); }}
-        .stat-card.disabled .num {{ color: var(--text-muted); }}
-        .stat-card.errors .num {{ color: var(--danger); }}
+        .stat-card.accessible .num {{ color: var(--danger); }}
+        .stat-card.disabled .num {{ color: var(--success); }}
+        .stat-card.errors .num {{ color: var(--text-muted); }}
         
         table {{
             width: 100%;
@@ -291,15 +290,15 @@ def generate_html_report(site_url, endpoint, results, output_filename):
                 <div class="num">{total_objects}</div>
             </div>
             <div class="stat-card accessible">
-                <div class="label">Accessible</div>
+                <div class="label">Accessible (Risk)</div>
                 <div class="num">{accessible_count}</div>
             </div>
             <div class="stat-card disabled">
-                <div class="label">Disabled</div>
+                <div class="label">Restricted / Disabled</div>
                 <div class="num">{disabled_count}</div>
             </div>
             <div class="stat-card errors">
-                <div class="label">Errors / Restricted</div>
+                <div class="label">Errors</div>
                 <div class="num">{errors_count}</div>
             </div>
         </div>
@@ -321,7 +320,6 @@ def generate_html_report(site_url, endpoint, results, output_filename):
 </html>
 """
 
-    # Resolve output location
     out_path = os.path.abspath(output_filename)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html_content)
@@ -364,7 +362,6 @@ def run_audit():
 
     print("=" * 65 + "\n")
 
-    # Generate external HTML file configured in config
     generate_html_report(site_url, endpoint, results, output_html)
 
 
