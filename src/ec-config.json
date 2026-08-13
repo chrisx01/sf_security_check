@@ -1,6 +1,7 @@
 {
     "site_url": "https://orgfarm-5e0a893263-dev-ed.develop.my.site.com/aflabs",
     "api_version": "v66.0",
+    "output_html": "audit_report.html",
     "objects": [
         "Account",
         "Contact",
