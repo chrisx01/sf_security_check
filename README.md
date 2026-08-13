@@ -34,30 +34,29 @@ Create or edit `ec-config.json` with the following structure:
 }
 
 ```
-
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| site_url | String | The base URL of the target Salesforce WebRuntime site. |
-| api_version | String | Salesforce API version (default: v66.0). |
-| output_html | String | Filename/path for the output HTML report. |
-| objects | Array | List of SObject API names to query. |
+| `site_url` | String | The base URL of the target Salesforce WebRuntime site. |
+| `api_version` | String | Salesforce API version (default: `v66.0`). |
+| `output_html` | String | Filename/path for the output HTML report. |
+| `objects` | Array | List of SObject API names to query. |
 
+## Running on Windows
 
-Running on Windows
-Method 1: Running the Standalone Executable (.exe)
+### Method 1: Running the Standalone Executable (`.exe`)
+
 No Python installation is required for this method.
 
+1. Download or extract `sf_audit_graphql.exe`.
+2. Place `ec-config.json` in the same directory as `sf_audit_graphql.exe`:
 
-Download or extract sf_audit_graphql.exe.
-
-Place ec-config.json in the same directory as sf_audit_graphql.exe:
-
-Plaintext
+```text
 sf_audit/
 ├── ec-config.json
 └── sf_audit_graphql.exe
-Run the executable in Command Prompt or PowerShell:
 
 DOS
 sf_audit_graphql.exe
-Open the generated HTML report (e.g., audit_report.html) in any web browser.
+```
+
+3. Open the generated HTML report (e.g., `audit_report.html`) in any web browser.
