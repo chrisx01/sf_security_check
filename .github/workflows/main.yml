@@ -25,15 +25,15 @@ jobs:
 
       - name: Build standalone exe
         run: |
-          pyinstaller --noconfirm --onefile --clean --name sf_audit_graphql src/sf_audit_graphql.py
+          pyinstaller --noconfirm --onefile --clean --name sf_audit_graphql src\sf_audit_graphql.py
 
-      - name: Debug Output Directory
+      - name: List dist directory contents
         run: |
-          Get-ChildItem -Path dist\
+          Get-ChildItem -Path dist
 
       - name: Upload compiled Windows EXE
         uses: actions/upload-artifact@v4
         with:
           name: sf_audit_graphql_windows
-          path: dist/*.exe
+          path: dist\sf_audit_graphql.exe
           if-no-files-found: error
