@@ -1,0 +1,30 @@
+{
+  "instance_url": "https://orgfarm-5e0a893263-dev-ed.develop.my.salesforce.com",
+  "api_version": "65.0",
+  "total_probes": 2,
+  "flagged_count": 0,
+  "findings": [
+    {
+      "category": "sobject_describe",
+      "target": "Account",
+      "caller": "unauthenticated",
+      "url": "https://orgfarm-5e0a893263-dev-ed.develop.my.salesforce.com/services/data/v65.0/sobjects/Account/describe/",
+      "method": "GET",
+      "status_code": 401,
+      "verdict": "PASS",
+      "detail": "Access denied/not found (401) as expected.",
+      "sample": null
+    },
+    {
+      "category": "sobject_query",
+      "target": "Account",
+      "caller": "unauthenticated",
+      "url": "https://orgfarm-5e0a893263-dev-ed.develop.my.salesforce.com/services/data/v65.0/query/?q=SELECT%20Id%2CName%20FROM%20Account%20LIMIT%201",
+      "method": "GET",
+      "status_code": 401,
+      "verdict": "PASS",
+      "detail": "Access denied (401) as expected.",
+      "sample": null
+    }
+  ]
+}

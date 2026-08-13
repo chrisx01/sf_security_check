@@ -1,0 +1,24 @@
+{
+  "_comment": "Configuration for the Salesforce Guest-User API Exposure Auditor. Only run this against orgs you own or are explicitly authorized to test.",
+  "instance_url": "https://orgfarm-5e0a893263-dev-ed.develop.my.salesforce.com",
+  "api_version": "65.0",
+  "_guest_session_comment": "OPTIONAL. If you want to test as an authenticated GUEST user of an Experience Cloud site (the realistic attack path), obtain a guest session id/token the same way an anonymous visitor would (e.g. by loading the community page and capturing the 'sid' cookie via browser devtools, or via a documented guest login flow). Leave blank to only test fully unauthenticated requests.",
+  "guest_session_id": "",
+  "community_base_url": "https://orgfarm-5e0a893263-dev-ed.develop.my.site.com/aflabs",
+  "_discovery_comment": "If true, the script calls the global describe endpoint (using guest_session_id if provided, otherwise unauthenticated) to enumerate every object visible and tests all of them. If false, only 'standard_objects' below is tested.",
+  "auto_discover_objects": true,
+  "standard_objects": [
+    "Account"
+  ],
+  "_apex_comment": "Custom Apex REST endpoints to probe for unauthenticated exposure. Paths are relative to /services/apexrest/. Add your org's known custom endpoints here.",
+  "custom_apex_endpoints": [],
+  "_soql_comment": "Fields to try selecting per object during the read-access probe. 'Id' is always attempted first as a safe minimal probe.",
+  "probe_fields": [
+    "Id",
+    "Name"
+  ],
+  "row_limit": 1,
+  "timeout_seconds": 10,
+  "requests_per_second": 5,
+  "output_report_path": "sf_guest_audit_report.json"
+}
