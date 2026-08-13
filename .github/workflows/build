@@ -25,7 +25,7 @@ jobs:
 
       - name: Build standalone exe
         run: |
-          pyinstaller --onefile --clean sf_audit_graphql.py
+          pyinstaller --onefile --clean ./src/sf_audit_graphql.py
 
       - name: Upload compiled Windows EXE
         uses: actions/upload-artifact@v4
